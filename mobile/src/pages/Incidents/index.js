@@ -1,12 +1,24 @@
 import React from 'react';
-import {View,Image, Text} from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import {useNavigation} from '@react-navigation/native';
+import {View,FlatList, Image, Text} from 'react-native';
 import logoImg from '../../assets/logo.png';
 
 import styles from './styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Incidents(){
+   
+    const  navigation = useNavigation();
+
+    function navigatoinDetail(){
+        navigation.navigate('Detail');
+
+    }
+   
+   
     return(
-    
+
     <View style={styles.container}>
 
         <View style={styles.header}>
@@ -17,9 +29,38 @@ export default function Incidents(){
         </View>
    
     <Text style={styles.title}>Bem Vindo</Text>
-    <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia.</Text>
+    <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia:</Text>
 
+        <FlatList
+            data={[1 , 2, 3 ]}
+            style ={styles.incidentList}
+            keyExtractor={incident => String(incident)}
+            showsVerticalScrollIndicator={false}
+            renderItem={()=> (
 
-    </View>
+                <View style={styles.incident}>
+    
+                    <Text style={styles.incidentProperty}>ONG: </Text>
+                    <Text style={styles.incidentValue}>APAD</Text>
+    
+                    <Text style={styles.incidentProperty}>Caso: </Text>
+                    <Text style={styles.incidentValue}>Cadelinha Atropelada</Text>
+    
+                    <Text style={styles.incidentProperty}>Valor:</Text>
+                    <Text style={styles.incidentValue}>120,00</Text>
+    
+                    <TouchableOpacity 
+                    style={styles.detailButton}
+                    onPress={navigatoinDetail}>
+
+                        <Text style={ styles.detailButtonText}>Ver mais detalhes</Text>
+                        <Feather name="arrow-right" size={16} color="#E02041"/>
+                    </TouchableOpacity>
+                </View>
+            )}
+        />
+        
+        </View>
+  
     );
 }
