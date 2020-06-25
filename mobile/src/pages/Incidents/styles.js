@@ -1,79 +1,73 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
 export default StyleSheet.create({
-
     container: {
         flex: 1,
-        paddingHorizontal:24,
+        paddingHorizontal: 24,
         paddingTop: Constants.statusBarHeight + 20,
     },
-    header:{
+
+    header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-
     },
+
     headerText: {
-        fontSize:15,
+        fontSize: 15,
         color: '#737380',
     },
 
-    headerTextBold:{
-        fontWeight:'bold'
+    headerTextBold: {
+        fontWeight: 'bold',
     },
 
-    title:{
-        fontSize:30,
+    title: {
+        fontSize: 30,
         marginBottom: 16,
         marginTop: 48,
         color: '#13131a',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
 
     description: {
-        fontSize:16,
+        fontSize: 16,
         lineHeight: 24,
-        color:'#737380'
+        color: '#737380',
     },
 
-    incidentList:{
-        marginTop:32,
+    incidentList: {
+        marginTop: 32,
     },
 
-    incident:{
+    incident: {
         padding: 24,
         borderRadius: 8,
         backgroundColor: '#FFF',
         marginBottom: 16,
     },
 
-    incidentProperty:{
+    incidentProperty: {
         fontSize: 14,
         color: '#41414d',
         fontWeight: 'bold'
     },
 
-    incidentValue:{
+    incidentValue: {
         marginTop: 8,
         fontSize: 15,
         marginBottom: 24,
-        color:"#737380",
+        color: '#737380',
     },
-    detailButton:{
+    detailsButton: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: 'center'
     },
-
-    detailButtonText:{
-        color:'#E02041',
-        fontSize:15,
-        fontWeight: 'bold',    }
-
-
-
-
-
-
+    detailsButtonText: {
+        color: '#E02041',
+        fontSize: 15,
+        fontWeight: 'bold'
+    }
 });
